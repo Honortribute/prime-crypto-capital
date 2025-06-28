@@ -1,60 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard - Prime Crypto Capital</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f9; }
-    header { background: #0c1e33; color: white; padding: 20px; text-align: center; }
-    .dashboard { max-width: 900px; margin: auto; padding: 40px 20px; }
-    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
-    .card h3 { margin: 0 0 10px; }
-    .btc-price { color: #f7931a; font-weight: bold; margin-top: 10px; }
-    .btn { background: #f7931a; color: white; padding: 10px 20px; text-decoration: none; display: inline-block; margin-top: 15px; border-radius: 5px; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
   <script>
-    async function fetchBTC() {
-      try {
-        const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice/BTC.json');
-        const data = await res.json();
-        const price = data.bpi.USD.rate;
-        document.getElementById("btcLive").textContent = `BTC: $${price}`;
-      } catch {
-        document.getElementById("btcLive").textContent = "BTC price unavailable";
-      }
-    }
-    window.onload = fetchBTC;
+    const firebaseConfig = {
+      apiKey: "AIzaSyA6PFtNbWvRbLzyN0pbNr_P9CUvFSBKiDg",
+      authDomain: "primecryptoauth.firebaseapp.com",
+      projectId: "primecryptoauth",
+      storageBucket: "primecryptoauth.firebasestorage.app",
+      messagingSenderId: "841033975232",
+      appId: "1:841033975232:web:52e28daee84c04933c3425",
+      measurementId: "G-35GXLSPW1K"
+    };
+    firebase.initializeApp(firebaseConfig);
   </script>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 20px; background: #f4f6f9; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { margin-bottom: 20px; }
+    .logout-btn { background: #d9534f; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; float: right; }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>Welcome, Investor</h1>
-  <p id="btcLive">Loading BTC Price...</p>
-</header>
-
-<div class="dashboard">
-  <div class="card">
-    <h3>Account Balance</h3>
-    <p>$2,500.00</p>
+  <div class="container">
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    <h2>Welcome to Your Dashboard</h2>
+    <p id="userEmail"></p>
+    <p>Your account is now protected and personalized.</p>
   </div>
 
-  <div class="card">
-    <h3>Active Plan</h3>
-    <p>Pro Plan – 15% Weekly</p>
-  </div>
+  <script>
+    const auth = firebase.auth();
 
-  <div class="card">
-    <h3>Weekly Earnings</h3>
-    <p>$375.00</p>
-  </div>
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById("userEmail").innerText = `Logged in as: ${user.email}`;
+      } else {
+        // Not logged in - redirect to login page
+        window.location.href = "login.html";
+      }
+    });
 
-  <div class="card">
-    <h3>Withdrawal</h3>
-    <a class="btn" href="#">Request Withdrawal</a>
-  </div>
-</div>
-
+    function logout() {
+      auth.signOut().then(() => {
+        window.location.href = "login.html";
+      });
+    }
+  </script>
 </body>
 </html>
