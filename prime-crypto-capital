@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prime Crypto Capital</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #0c1e33; color: white; padding: 20px 40px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    section { padding: 40px 20px; max-width: 900px; margin: auto; }
+    .hero { background: url('https://bitcoin.org/img/icons/opengraph.png') center/cover no-repeat; color: white; text-align: center; padding: 100px 20px; background-color: rgba(0,0,0,0.6); background-blend-mode: darken; }
+    .plans { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .plan { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 250px; text-align: center; }
+    .plan h3 { margin-bottom: 10px; }
+    .plan p { font-size: 14px; }
+    footer { background: #0c1e33; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    .btn { background: #f7931a; color: white; padding: 10px 20px; border: none; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 10px; display: inline-block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Prime Crypto Capital</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#plans">Investment Plans</a>
+    <a href="#how">How It Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Grow Your Wealth Through Bitcoin</h2>
+  <p>Secure. Transparent. Profitable.</p>
+  <a href="#plans" class="btn">View Plans</a>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    Prime Crypto Capital is a professional Bitcoin investment platform dedicated to helping you grow your digital assets securely. 
+    With expert traders and advanced algorithms, we generate consistent returns for our investors.
+  </p>
+</section>
+
+<section id="plans">
+  <h2>Investment Plans</h2>
+  <div class="plans">
+    <div class="plan">
+      <h3>Starter Plan</h3>
+      <p>Deposit: $100 - $999<br>ROI: 10% Weekly</p>
+      <a href="#contact" class="btn">Get Started</a>
+    </div>
+    <div class="plan">
+      <h3>Pro Plan</h3>
+      <p>Deposit: $1,000 - $4,999<br>ROI: 15% Weekly</p>
+      <a href="#contact" class="btn">Join Now</a>
+    </div>
+    <div class="plan">
+      <h3>VIP Plan</h3>
+      <p>Deposit: $5,000+<br>ROI: 20% Weekly</p>
+      <a href="#contact" class="btn">Apply</a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How It Works</h2>
+  <ol>
+    <li>Register your free account.</li>
+    <li>Choose an investment plan.</li>
+    <li>Send Bitcoin to our secure wallet address.</li>
+    <li>Track your earnings weekly.</li>
+    <li>Withdraw profits anytime.</li>
+  </ol>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>📧 Email: support@primecryptocapital.com</p>
+  <p>📍 Address: 123 Bitcoin Blvd, Crypto City, USA</p>
+</section>
+
+<footer>
+  &copy; 2025 Prime Crypto Capital • All rights reserved.
+</footer>
+
+</body>
+</html>
